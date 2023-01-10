@@ -40,7 +40,7 @@ class _MyDialPadWidget extends State<DialPadWidget>
 
     setState(() {});
   }
- 
+
   void _bindEventListeners() {
     helper!.addSipUaHelperListener(this);
   }
@@ -273,7 +273,7 @@ class _MyDialPadWidget extends State<DialPadWidget>
                             SizedBox(
                               width: 69,
                               child: Text('About'),
-                            )
+                            ),
                           ],
                         ),
                       )
