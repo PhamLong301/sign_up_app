@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../widgets/contacts_widget.dart';
 
 class ContactListScene extends StatelessWidget {
