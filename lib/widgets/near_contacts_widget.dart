@@ -5,12 +5,13 @@ class NearContactsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: 70,
       child: Column(
         children: [
-          const Text('dd/MM/yy',
+          const Text(
+            'dd/MM/yy',
             textAlign: TextAlign.left,
           ),
           SizedBox(
@@ -24,15 +25,14 @@ class NearContactsWidget extends StatelessWidget {
                   Icons.account_circle,
                 ),
               ),
-              title: Text('Contacts',
+              title: Text(
+                'Contacts',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
               ),
-              subtitle: Text(
-                  'Phone Number'
-              ),
+              subtitle: Text('Phone Number'),
               trailing: Text('00:00'),
             ),
           )
