@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_up_app/model/get_information.dart';
-import 'package:provider/provider.dart';
+
 
 class ContactWidget extends StatefulWidget {
   const ContactWidget({Key? key}) : super(key: key);
