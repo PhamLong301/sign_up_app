@@ -199,9 +199,13 @@ class _MyDialPadWidget extends State<DialPadWidget>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  ActionButton(
-                    icon: Icons.videocam,
-                    onPressed: () => _handleCall(context),
+                  // ActionButton(
+                  //   icon: Icons.videocam,
+                  //   onPressed: () => _handleCall(context),
+                  // ),
+                  const Expanded(
+                    flex: 1,
+                    child: SizedBox(),
                   ),
                   ActionButton(
                     icon: Icons.dialer_sip,
