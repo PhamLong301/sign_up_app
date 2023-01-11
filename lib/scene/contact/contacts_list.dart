@@ -39,7 +39,7 @@ class _ContactListSceneState extends State<_ContactListScene> {
                           fontWeight: FontWeight.bold,
                           fontSize: 30),
                     ),
-                    Text('00 Contacts have munber',
+                    Text('XX Contacts have munber',
                       style: TextStyle(
                           color: Colors.grey,
                           fontSize: 15),
