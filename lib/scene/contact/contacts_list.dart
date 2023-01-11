@@ -6,7 +6,7 @@ class ContactListScene extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: _ContactListScene(),
       debugShowCheckedModeBanner: false,
     );
