@@ -6,6 +6,7 @@ class RegisterWidget extends StatefulWidget {
   final SIPUAHelper? _helper;
   const RegisterWidget(this._helper, {Key? key}) : super(key: key);
   @override
+  // ignore: library_private_types_in_public_api
   _MyRegisterWidget createState() => _MyRegisterWidget();
 }
 
