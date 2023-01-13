@@ -46,8 +46,8 @@ class _MyRegisterWidget extends State<RegisterWidget>
     setState(() {
       _wsUriController.text =
           _preferences.getString('ws_uri') ?? 'wss://cms.siptrunk.vn:4443';
-      _sipUriController.text =
-       _preferences.getString('sip_uri') ?? 'sip:ext202411005@cms.siptrunk.vn';
+      _sipUriController.text = _preferences.getString('sip_uri') ??
+          'sip:ext202411005@cms.siptrunk.vn';
       _displayNameController.text =
           _preferences.getString('display_name') ?? 'Flutter SIP UA';
       _passwordController.text = _preferences.getString('password') ?? '';
