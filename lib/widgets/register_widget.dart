@@ -51,9 +51,9 @@ class _MyRegisterWidget extends State<RegisterWidget>
           'sip:ext202411005@cms.siptrunk.vn';
       _displayNameController.text =
           _preferences.getString('display_name') ?? 'Flutter SIP UA';
-      _passwordController.text = _preferences.getString('password') ?? '';
+      _passwordController.text = _preferences.getString('password') ?? 'VNTELcc@2022!';
       _authorizationUserController.text =
-          _preferences.getString('auth_user') ?? '';
+          _preferences.getString('auth_user') ?? 'sip:ext202411005@cms.siptrunk.vn';
     });
   }
 
