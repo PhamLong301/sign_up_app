@@ -290,22 +290,22 @@ class _MyDialPadWidget extends State<DialPadWidget>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(6.0),
-                child: Center(
-                    child: Text(
-                  'Status: ${EnumHelper.getName(helper!.registerState.state)}',
-                  style: const TextStyle(fontSize: 14, color: Colors.black54),
-                )),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(6.0),
-                child: Center(
-                    child: Text(
-                  'Received Message: $receivedMsg',
-                  style: const TextStyle(fontSize: 14, color: Colors.black54),
-                )),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(6.0),
+              //   child: Center(
+              //       child: Text(
+              //     'Status: ${EnumHelper.getName(helper!.registerState.state)}',
+              //     style: const TextStyle(fontSize: 14, color: Colors.black54),
+              //   )),
+              // ),
+              // Padding(
+              //   padding: const EdgeInsets.all(6.0),
+              //   child: Center(
+              //       child: Text(
+              //     'Received Message: $receivedMsg',
+              //     style: const TextStyle(fontSize: 14, color: Colors.black54),
+              //   )),
+              // ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
