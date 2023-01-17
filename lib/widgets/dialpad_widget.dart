@@ -11,7 +11,7 @@ class DialPadWidget extends StatefulWidget {
   final SIPUAHelper? _helper;
   const DialPadWidget(this._helper, {Key? key}) : super(key: key);
   @override
-  // ignore:
+  // ignore: library_private_types_in_public_api
   _MyDialPadWidget createState() => _MyDialPadWidget();
 }
 
