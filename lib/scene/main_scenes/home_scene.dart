@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:sign_up_app/scene/contact/dialpad_scene.dart';
 import 'package:sign_up_app/scene/contact/near_contacts_scene.dart';
