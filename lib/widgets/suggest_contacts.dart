@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SuggestContact extends StatelessWidget {
@@ -34,7 +33,7 @@ class SuggestContact extends StatelessWidget {
                     child: Text('Phone Number',
                     style: TextStyle(
                       fontSize: 15,
-                    ),)
+                    ),),
                 ),
               ],
             )
