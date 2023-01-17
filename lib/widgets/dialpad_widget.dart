@@ -11,7 +11,7 @@ class DialPadWidget extends StatefulWidget {
   final SIPUAHelper? _helper;
   const DialPadWidget(this._helper, {Key? key}) : super(key: key);
   @override
-  // ignore:   
+  // ignore:
   _MyDialPadWidget createState() => _MyDialPadWidget();
 }
 
@@ -154,7 +154,7 @@ class _MyDialPadWidget extends State<DialPadWidget>
 
   List<Widget> _buildDialPad() {
     return [
-      const SizedBox( 
+      const SizedBox(
         height: 15,
       ),
       SizedBox(
@@ -290,14 +290,17 @@ class _MyDialPadWidget extends State<DialPadWidget>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-              // Padding(
-              //   padding: const EdgeInsets.all(6.0),
-              //   child: Center(
-              //       child: Text(
-              //     'Status: ${EnumHelper.getName(helper!.registerState.state)}',
-              //     style: const TextStyle(fontSize: 14, color: Colors.black54),
-              //   )),
-              // ),
+              const Padding(
+                padding: EdgeInsets.all(6.0),
+                child: Center(
+                    child: Text(
+                  'Contact',
+                  style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold),
+                )),
+              ),
               // Padding(
               //   padding: const EdgeInsets.all(6.0),
               //   child: Center(
