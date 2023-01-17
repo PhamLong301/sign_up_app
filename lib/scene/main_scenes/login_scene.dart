@@ -186,7 +186,7 @@ class _LoginSceneState extends State<_LoginScene> {
               shrinkWrap: true,
               padding: const EdgeInsets.only(left: 30.0, right: 30.0),
               children: [
-                const SizedBox(height: 223.0),
+                const SizedBox(height: 180.0),
                 logo,
                 const SizedBox(height: 30.0),
                 username,
@@ -196,7 +196,7 @@ class _LoginSceneState extends State<_LoginScene> {
                 loginButton,
                 forgotLabel,
                 signupLable,
-                const SizedBox(height: 224.0),
+                const SizedBox(height: 205.0),
               ],
             ),
             Align(
