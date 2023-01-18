@@ -224,6 +224,9 @@ class _LoginSceneState extends State<_LoginScene> {
                 signupLable,
               ],
             ),
+            const SizedBox(
+              height: 182,
+            ),
             Align(
               alignment: Alignment.bottomCenter,
               child: Visibility(
