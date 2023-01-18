@@ -188,17 +188,40 @@ class _LoginSceneState extends State<_LoginScene> {
               shrinkWrap: true,
               padding: const EdgeInsets.only(left: 30.0, right: 30.0),
               children: [
-                const SizedBox(height: 180.0),
-                logo,
-                const SizedBox(height: 30.0),
-                username,
-                const SizedBox(height: 5.0),
-                password,
+                // const SizedBox(height: 180.0),
+                // logo,
+                // const SizedBox(height: 30.0),
+                // username,
+                // const SizedBox(height: 5.0),
+                // password,
+                // const SizedBox(height: 5.0),
+                // loginButton,
+                // forgotLabel,
+                // signupLable,
+                // const SizedBox(height: 205.0),
+
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 300,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: logo,
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 130,
+                  child: Column(
+                    children: [
+                      Expanded(flex: 1, child: username),
+                      Expanded(flex: 1, child: password),
+                    ],
+                  ),
+                ),
                 const SizedBox(height: 5.0),
                 loginButton,
                 forgotLabel,
                 signupLable,
-                const SizedBox(height: 205.0),
               ],
             ),
             Align(
