@@ -67,7 +67,7 @@ class SignUpState extends State {
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(30.0))),
     );
-    final loginButon = Material(
+    final submitButon = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(20.0),
       color: Colors.blue,
@@ -136,7 +136,7 @@ class SignUpState extends State {
                 const SizedBox(
                   height: 35.0,
                 ),
-                loginButon,
+                submitButon,
                 const SizedBox(
                   height: 15.0,
                 ),
