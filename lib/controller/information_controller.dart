@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, unused_import
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import '../model/get_information.dart';
@@ -52,6 +54,7 @@ class InformationController with ChangeNotifier {
 
 
   GetInformationModel? findById(String? id) {
+    // ignore: unrelated_type_equality_checks
     return _allInformation.firstWhere((prod) => prod?.id == id);
   }
 }
