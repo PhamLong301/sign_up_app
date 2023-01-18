@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, depend_on_referenced_packages, library_private_types_in_public_api, prefer_const_constructors_in_immutables
+
 import 'package:flutter/material.dart';
 import 'package:sip_ua/sip_ua.dart';
 import 'package:flutter/foundation.dart' show debugDefaultTargetPlatformOverride;
