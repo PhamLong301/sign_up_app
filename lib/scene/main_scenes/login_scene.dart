@@ -11,7 +11,7 @@ import '../../widgets/no_internet_connection.dart';
 import 'home_scene.dart';
 import 'package:provider/provider.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-
+  
 class LoginScene extends StatelessWidget {
   const LoginScene({Key? key}) : super(key: key);
   static const routeName = '/home_scene';
