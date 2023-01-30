@@ -10,7 +10,7 @@ import 'package:flutter_webrtc/flutter_webrtc.dart';
 import '../../widgets/about_widget.dart';
 import '../../widgets/callscreen_widget.dart';
 import '../../widgets/dialpad_widget.dart';
-import '../../widgets/register_widget.dart';
+import '../../widgets/register_sip_widget.dart';
 
 typedef PageContentBuilder = Widget Function(
     [SIPUAHelper? helper, Object? arguments]);
