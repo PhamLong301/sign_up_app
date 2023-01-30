@@ -90,7 +90,7 @@ class _MyRegisterWidget extends State<RegisterWidget>
             ),
           ],
         );
-      },
+      }, 
     );
   }
 
