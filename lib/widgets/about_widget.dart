@@ -25,7 +25,6 @@ class AboutWidget extends StatelessWidget {
                     ),
                     colors: [
                       Colors.blue,
-                      Colors.red,
                       Colors.teal,
                     ],
                   ),
