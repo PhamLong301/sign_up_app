@@ -23,10 +23,7 @@ class AboutWidget extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 25.0,
                     ),
-                    colors: [
-                      Colors.blue,
-                      Colors.teal,
-                    ],
+                    colors: [Colors.red, Colors.orange, Colors.yellow],
                   ),
                 ],
               ),
