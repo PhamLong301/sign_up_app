@@ -19,7 +19,7 @@ class AboutWidget extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   GradientText(
-                    'Gradient Text Example',
+                    'This app is under developing!!!!!',
                     style: TextStyle(
                       fontSize: 40.0,
                     ),
