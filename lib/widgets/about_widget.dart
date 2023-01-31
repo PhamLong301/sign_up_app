@@ -21,7 +21,7 @@ class AboutWidget extends StatelessWidget {
                   GradientText(
                     'This app is under developing!!!!!',
                     style: TextStyle(
-                      fontSize: 40.0,
+                      fontSize: 25.0,
                     ),
                     colors: [
                       Colors.blue,
