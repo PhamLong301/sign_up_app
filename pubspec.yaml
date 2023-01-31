@@ -37,6 +37,7 @@ dependencies:
   sip_ua: ^0.5.3
   connectivity_plus: ^3.0.2
   permission_handler: ^9.2.0
+  simple_gradient_text: ^1.2.4
   flutter:
     sdk: flutter
 
