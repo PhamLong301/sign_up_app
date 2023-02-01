@@ -1,8 +1,9 @@
+// ignore_for_file: depend_on_referenced_packages, library_private_types_in_public_api
+
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:sip_ua/sip_ua.dart';
 
@@ -11,11 +12,12 @@ import 'action_button.dart';
 class CallScreenWidget extends StatefulWidget {
   final SIPUAHelper? _helper;
   final Call? _call;
-  const CallScreenWidget(this._helper, this._call, {Key? key}) : super(key: key);
+  const CallScreenWidget(this._helper, this._call, {Key? key})
+      : super(key: key);
   @override
-  // ignore: library_private_types_in_public_api
   _MyCallScreenWidget createState() => _MyCallScreenWidget();
 }
+
 class _MyCallScreenWidget extends State<CallScreenWidget>
     implements SipUaHelperListener {
   RTCVideoRenderer? _localRenderer = RTCVideoRenderer();
@@ -37,7 +39,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
   SIPUAHelper? get helper => widget._helper;
   bool get voiceOnly =>
       (_localStream == null || _localStream!.getVideoTracks().isEmpty) &&
-          (_remoteStream == null || _remoteStream!.getVideoTracks().isEmpty);
+      (_remoteStream == null || _remoteStream!.getVideoTracks().isEmpty);
   String? get remoteIdentity => call!.remote_identity;
   String get direction => call!.direction;
   Call? get call => widget._call;
@@ -48,12 +50,14 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
     helper!.addSipUaHelperListener(this);
     _startTimer();
   }
+
   @override
   deactivate() {
     super.deactivate();
     helper!.removeSipUaHelperListener(this);
     _disposeRenderers();
   }
+
   void _startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (Timer timer) {
       Duration duration = Duration(seconds: timer.tick);
@@ -68,6 +72,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
       }
     });
   }
+
   void _initRenderers() async {
     if (_localRenderer != null) {
       await _localRenderer!.initialize();
@@ -76,6 +81,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
       await _remoteRenderer!.initialize();
     }
   }
+
   void _disposeRenderers() {
     if (_localRenderer != null) {
       _localRenderer!.dispose();
@@ -86,6 +92,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
       _remoteRenderer = null;
     }
   }
+
   @override
   void callStateChanged(Call call, CallState callState) {
     if (callState.state == CallStateEnum.HOLD ||
@@ -132,6 +139,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
         break;
     }
   }
+
   @override
   void transportStateChanged(TransportState state) {}
   @override
@@ -144,6 +152,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
     _localStream!.dispose();
     _localStream = null;
   }
+
   void _backToDialPad() {
     _timer.cancel();
     Timer(const Duration(seconds: 2), () {
@@ -151,6 +160,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
     });
     _cleanUp();
   }
+
   void _handelStreams(CallState event) async {
     MediaStream? stream = event.stream;
     if (event.originator == 'local') {
@@ -172,6 +182,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
       _resizeLocalVideo();
     });
   }
+
   void _resizeLocalVideo() {
     _localVideoMargin = _remoteStream != null
         ? const EdgeInsets.only(top: 15, right: 15)
@@ -183,10 +194,12 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
         ? MediaQuery.of(context).size.height / 4
         : MediaQuery.of(context).size.height;
   }
+
   void _handleHangup() {
     call!.hangup({'status_code': 603});
     _timer.cancel();
   }
+
   void _handleAccept() async {
     bool remoteHasVideo = call!.remote_has_video;
     final mediaConstraints = <String, dynamic>{
@@ -196,10 +209,10 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
     MediaStream mediaStream;
     if (kIsWeb && remoteHasVideo) {
       mediaStream =
-      await navigator.mediaDevices.getDisplayMedia(mediaConstraints);
+          await navigator.mediaDevices.getDisplayMedia(mediaConstraints);
       mediaConstraints['video'] = false;
       MediaStream userStream =
-      await navigator.mediaDevices.getUserMedia(mediaConstraints);
+          await navigator.mediaDevices.getUserMedia(mediaConstraints);
       mediaStream.addTrack(userStream.getAudioTracks()[0], addToNative: true);
     } else {
       mediaConstraints['video'] = remoteHasVideo;
@@ -208,11 +221,13 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
     call!.answer(helper!.buildCallOptions(!remoteHasVideo),
         mediaStream: mediaStream);
   }
+
   void _switchCamera() {
     if (_localStream != null) {
       Helper.switchCamera(_localStream!.getVideoTracks()[0]);
     }
   }
+
   void _muteAudio() {
     if (_audioMuted) {
       call!.unmute(true, false);
@@ -220,6 +235,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
       call!.mute(true, false);
     }
   }
+
   void _muteVideo() {
     if (_videoMuted) {
       call!.unmute(false, true);
@@ -227,6 +243,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
       call!.mute(false, true);
     }
   }
+
   void _handleHold() {
     if (_hold) {
       call!.unhold();
@@ -234,6 +251,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
       call!.hold();
     }
   }
+
   late String _transferTarget;
   void _handleTransfer() {
     showDialog<void>(
@@ -272,17 +290,20 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
       },
     );
   }
+
   void _handleDtmf(String tone) {
     if (kDebugMode) {
       print('Dtmf tone => $tone');
     }
     call!.sendDTMF(tone);
   }
+
   void _handleKeyPad() {
     setState(() {
       _showNumPad = !_showNumPad;
     });
   }
+
   void _toggleSpeaker() {
     if (_localStream != null) {
       _speakerOn = !_speakerOn;
@@ -291,6 +312,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
       }
     }
   }
+
   List<Widget> _buildNumPad() {
     var labels = [
       [
@@ -309,26 +331,27 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
         {'9': 'wxyz'}
       ],
       [
-        {'*': ''},        
+        {'*': ''},
         {'0': '+'},
         {'#': ''}
       ],
     ];
     return labels
         .map((row) => Padding(
-        padding: const EdgeInsets.all(3),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: row
-                .map((label) => ActionButton(
-              title: label.keys.first,
-              subTitle: label.values.first,
-              onPressed: () => _handleDtmf(label.keys.first),
-              number: true,
-            ))
-                .toList())))
+            padding: const EdgeInsets.all(3),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: row
+                    .map((label) => ActionButton(
+                          title: label.keys.first,
+                          subTitle: label.values.first,
+                          onPressed: () => _handleDtmf(label.keys.first),
+                          number: true,
+                        ))
+                    .toList())))
         .toList();
   }
+
   Widget _buildActionButtons() {
     var hangupBtn = ActionButton(
       title: "hangup",
@@ -453,6 +476,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
         mainAxisAlignment: MainAxisAlignment.end,
         children: actionWidgets);
   }
+
   Widget _buildContent() {
     var stackWidgets = <Widget>[];
 
@@ -481,39 +505,43 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
         right: 0,
         child: Center(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Center(
-                    child: Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Text(
-                          (voiceOnly ? 'VOICE CALL' : 'VIDEO CALL') +
-                              (_hold
-                                  ? ' PAUSED BY ${_holdOriginator!.toUpperCase()}'
-                                  : ''),
-                          style: const TextStyle(fontSize: 24, color: Colors.black54),
-                        ))),
-                Center(
-                    child: Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Text(
-                          '$remoteIdentity',
-                          style: const TextStyle(fontSize: 18, color: Colors.black54),
-                        ))),
-                Center(
-                    child: Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Text(_timeLabel,
-                            style: const TextStyle(fontSize: 14, color: Colors.black54))))
-              ],
-            )),
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Center(
+                child: Padding(
+                    padding: const EdgeInsets.all(6),
+                    child: Text(
+                      (voiceOnly ? 'VOICE CALL' : 'VIDEO CALL') +
+                          (_hold
+                              ? ' PAUSED BY ${_holdOriginator!.toUpperCase()}'
+                              : ''),
+                      style:
+                          const TextStyle(fontSize: 24, color: Colors.black54),
+                    ))),
+            Center(
+                child: Padding(
+                    padding: const EdgeInsets.all(6),
+                    child: Text(
+                      '$remoteIdentity',
+                      style:
+                          const TextStyle(fontSize: 18, color: Colors.black54),
+                    ))),
+            Center(
+                child: Padding(
+                    padding: const EdgeInsets.all(6),
+                    child: Text(_timeLabel,
+                        style: const TextStyle(
+                            fontSize: 14, color: Colors.black54))))
+          ],
+        )),
       ),
     ]);
     return Stack(
       children: stackWidgets,
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -528,6 +556,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 24.0),
             child: SizedBox(width: 320, child: _buildActionButtons())));
   }
+
   @override
   void onNewMessage(SIPMessageRequest msg) {
     // NO OP
