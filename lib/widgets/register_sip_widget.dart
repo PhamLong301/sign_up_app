@@ -56,7 +56,7 @@ class _MyRegisterWidget extends State<RegisterWidget>
           _preferences.getString('auth_user') ?? 'sip:ext202411005@cms.siptrunk.vn';
     });
   }
-
+  
   void _saveSettings() {
     _preferences.setString('wss://cms.siptrunk.vn:4443', _wsUriController.text);
     _preferences.setString(
