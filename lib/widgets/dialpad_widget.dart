@@ -290,17 +290,17 @@ class _MyDialPadWidget extends State<DialPadWidget>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.all(6.0),
-                child: Center(
-                    child: Text(
-                  'Contact',
-                  style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold),
-                )),
-              ),
+              // const Padding(
+              //   padding: EdgeInsets.all(6.0),
+              //   child: Center(
+              //       child: Text(
+              //     'Contact',
+              //     style: TextStyle(
+              //         fontSize: 25,
+              //         color: Colors.black87,
+              //         fontWeight: FontWeight.bold),
+              //   )),
+              // ),
               // Padding(
               //   padding: const EdgeInsets.all(6.0),
               //   child: Center(
