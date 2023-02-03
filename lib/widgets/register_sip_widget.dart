@@ -54,7 +54,7 @@ class _MyRegisterWidget extends State<RegisterWidget>
       _passwordController.text =
           _preferences.getString('password') ?? 'WnySf8sdBKLEAxG';
       _authorizationUserController.text =
-          _preferences.getString('auth_user') ?? 'sip:2000@homer.siptrunk.vn';
+          _preferences.getString('auth_user') ?? '2000';
     });
   }
 
