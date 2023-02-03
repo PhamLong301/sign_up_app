@@ -46,21 +46,22 @@ class _MyRegisterWidget extends State<RegisterWidget>
     _preferences = await SharedPreferences.getInstance();
     setState(() {
       _wsUriController.text =
-          _preferences.getString('ws_uri') ?? 'wss://cms.siptrunk.vn:4443';
-      _sipUriController.text = _preferences.getString('sip_uri') ??
-          'sip:ext202411005@cms.siptrunk.vn';
+          _preferences.getString('ws_uri') ?? 'wss://ps102.siptrunk.vn:5065';
+      _sipUriController.text =
+          _preferences.getString('sip_uri') ?? 'sip:2000@homer.siptrunk.vn';
       _displayNameController.text =
           _preferences.getString('display_name') ?? 'Flutter SIP UA';
-      _passwordController.text = _preferences.getString('password') ?? 'VNTELcc@2022!';
+      _passwordController.text =
+          _preferences.getString('password') ?? 'WnySf8sdBKLEAxG';
       _authorizationUserController.text =
-          _preferences.getString('auth_user') ?? 'sip:ext202411005@cms.siptrunk.vn';
+          _preferences.getString('auth_user') ?? 'sip:2000@homer.siptrunk.vn';
     });
   }
-  
+
   void _saveSettings() {
-    _preferences.setString('wss://cms.siptrunk.vn:4443', _wsUriController.text);
     _preferences.setString(
-        'ext202411005@cms.siptrunk.vn', _sipUriController.text);
+        'wss://ps102.siptrunk.vn:5065', _wsUriController.text);
+    _preferences.setString('2000@homer.siptrunk.vn', _sipUriController.text);
     _preferences.setString('display_name', _displayNameController.text);
     _preferences.setString('password', _passwordController.text);
     _preferences.setString('auth_user', _authorizationUserController.text);
@@ -90,15 +91,15 @@ class _MyRegisterWidget extends State<RegisterWidget>
             ),
           ],
         );
-      }, 
+      },
     );
   }
 
   void _handleSave(BuildContext context) {
     if (_wsUriController.text == '') {
-      _alert(context, "wss://cms.siptrunk.vn:4443");
+      _alert(context, "wss://ps102.siptrunk.vn:5065");
     } else if (_sipUriController.text == '') {
-      _alert(context, "ext202411005@cms.siptrunk.vn");
+      _alert(context, "2000@homer.siptrunk.vn");
     }
 
     UaSettings settings = UaSettings();
