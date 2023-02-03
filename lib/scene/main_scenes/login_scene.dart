@@ -11,7 +11,7 @@ import '../../widgets/no_internet_connection.dart';
 import 'home_scene.dart';
 import 'package:provider/provider.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-  
+
 class LoginScene extends StatelessWidget {
   const LoginScene({Key? key}) : super(key: key);
   static const routeName = '/home_scene';
@@ -220,12 +220,12 @@ class _LoginSceneState extends State<_LoginScene> {
                 ),
                 const SizedBox(height: 5.0),
                 loginButton,
-                forgotLabel,
-                signupLable,
+                // forgotLabel,
+                // signupLable,
               ],
             ),
             const SizedBox(
-              height: 182,
+              height: 278,
             ),
             Align(
               alignment: Alignment.bottomCenter,
