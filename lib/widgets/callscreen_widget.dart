@@ -160,7 +160,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
     _cleanUp();
   }
 
-  void _handelStreams(CallState event) async {
+  void _handelStreams(CallState event) async { 
     MediaStream? stream = event.stream;
     if (event.originator == 'local') {
       if (_localRenderer != null) {
