@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           return InternetConnectionChecker().onStatusChange;
         },
         child: MaterialApp(
-          debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: true,
           home: const LoginScene(),
           routes: {
             LoginScene.routeName: (ctx) => const LoginScene(),
